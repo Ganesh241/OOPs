@@ -1,0 +1,62 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Player{
+    int* data;
+    
+    public:
+    
+    Player(int n){
+        data=new int;
+        *data=n;
+        cout<<"data allocated on heap"<<endl;
+    }
+    
+    void set_data(int n)
+    {
+        *data=n;
+    }
+    int get_data()
+    {
+        return *data;
+    }
+    
+    
+    Player(const Player& source)
+    {
+        data=(source.data);
+        cout<<"Copy cunstructor- shollow copy"<<endl;
+    }
+    
+    ~Player()
+    {
+        delete data;
+        cout<<"Discturctor called of"<<endl;
+    }
+    
+    
+};
+
+void display(Player p)
+{
+    cout<<p.get_data()<<endl;
+}
+
+int main()
+{
+    Player one{10};
+    display(one);
+    Player two{one};
+    two.set_data(20);
+    // cout<<one.get_data()<<endl;
+
+    return 0;
+}
