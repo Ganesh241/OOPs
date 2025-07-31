@@ -1,0 +1,51 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Player{
+    string name;
+    int hp;
+    int x;
+    
+    public:
+    string getname(){ return name;}
+    int gethp(){return hp;}
+    int getx(){return x;}
+    
+    
+    Player(string v_name="none",int v_hp=0,int v_x=0):name{v_name},hp{v_hp},x{v_x}{
+        cout<<"inside the intilier"<<endl;
+    }
+    
+    void dislay( Player source)
+    {
+        cout<<"copy of "<<source.name<<endl;
+    }
+
+    Player(const Player &source);
+};
+
+Player::Player(const Player &source){
+    name=source.name;
+    hp=source.hp;
+    x=source.x;
+    cout<<"copy constructor made of: "<<source.name<<endl;
+}
+
+int main()
+{
+    Player emp;
+    Player one("Ganesh");
+    // Player new_empty{one};
+    emp.dislay(one);
+    
+
+    return 0;
+}
