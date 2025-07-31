@@ -1,0 +1,44 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class emp{
+    string name;
+    int hp;
+    int x;
+    
+    public:
+    
+    emp();
+    emp(string name);
+    emp(string name,int hp,int x);
+    
+};
+
+emp::emp():emp{"none",0,0}{
+    cout<<"inside the no-args constructor"<<endl;
+}
+
+emp::emp(string v_name):emp{v_name,0,0}{
+    cout<<"inside the one args constructor"<<endl;
+}
+
+emp::emp(string v_name,int v_hp,int v_x):name{v_name},hp{v_hp},x{v_x}{
+    cout<<"inside the three args constructor"<<endl;
+}
+
+int main()
+{
+    emp no;
+    emp one("Ganesh");
+    emp tree("Ganesh",10,5);
+
+    return 0;
+}
